@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+
+<!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Controllable Emotional Speech Synthesis via Semantic Diffusion Guidance</title>
+<meta name="generator" content="Jekyll v3.9.0">
+<meta property="og:title" content="TODO: title">
+<meta property="og:locale" content="en_US">
+<link rel="canonical" href="https://leiyi420.github.io/CSEmoTransfer">
+<meta property="og:url" content="https://leiyi420.github.io/CSEmoTransfer">
+<meta name="twitter:card" content="summary">
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body data-new-gr-c-s-check-loaded="14.1001.0" data-gr-ext-installed="">
+    <section class="page-header">
+    <p  class="project-name">
+    	Controllable Emotional Speech Synthesis via Semantic Diffusion Guidance
+	</p>
+    <br>
+    <h2 class="project-tagline">
+      <center>Submitted to ICASSP 2025</center>
+    </h2>
+    </section>
+
+<section class="main-content">
+
+<h2>0. Contents</h2>
+<ul>
+  <li><a href="#abstract">Abstract</a></li>
+  <li><a href='#emotion_transfer'>Emotion Transfer</a></li>
+  <li><a href='#long_form_utterance'>Long-form Utterance</a></li>
+  <li><a href='#fine-grained semantic control'>Fine-grained semantic control</a></li>
+</ul>
+
+<br>
+<h2 id="abstract">1. Abstract<a name="abstract"></a></h2>
+<p> 
+	Although current emotional text-to-speech (ETTS) models can synthesize high-quality speech, synthesizing emotional speech without annotated data remains a challenging task. 
+	In this paper, we propose semantic diffusion guidance (SDG), which alleviates the dependence on annotated emotional information by modeling emotions from a semantic perspective.
+	Accordingly, we build SDG-ETTS, integrating language and audio guidance into a unified framework. 
+	Specifically, we first train an emotion-unconditional diffusion model. Then, the encoder of the contrastive language-audio pretraining (CLAP) model is fine-tuned in a self-supervised manner to obtain the guidance module.
+	During inference, audio-text or audio matching scores are iteratively injected into the diffusion model to guide the sampling process, without the need for retraining.
+	Our experimental results demonstrate that SDG-ETTS can effectively generate emotional samples based on different types of guidance while maintaining high speech quality without any data annotations. Particularly, when performing audio style transfer, it achieves comparable performance to state-of-the-art unsupervised 
+	baselines.
+</p>
+<center><img src='myfig/SDG.png'></center>
+<p style="text-align: justify; font-size:16px;font-color:#D5CFCF;margin-left: 20px;margin-right:20px ;margin-top: 10px;">
+	Fig. 1:  The fine-tuning process of the CLAP audio encoder and the inference process of the proposed SDG-ETTS. The purple dashed box provides the guiding function for the diffusion model during a single iteration of inference.
+</p>
+
+
+<h2>2. Emotion Transfer<a name="emotion_transfer"></a></h2>
+<p>
+	In audio style guidance (ASG) inference mode, style transfer is allowed by providing a reference audio. This allows us to make direct comparisons with existing reference-based unsupervised style transfer methods.
+	<br>
+	We conducted parallel transfer test, meaning the target text information is the same as reference audio's.
+</p>
+<table>
+   <thead>
+    	<tr>
+    		<th style="text-align: center"><strong>Transcript</strong></th>
+	      	<th style="text-align: center"><strong>Ground Truth</strong></th>
+	        <th style="text-align: center"><strong>GradTTS-GST</strong></th>
+	        <th style="text-align: center"><strong>GradTTS-VAE</strong></th>
+	        <th style="text-align: center"><strong>Ours (ASG)</strong></th>
+	    </tr>
+  	</thead> 
+  	<tbody>
+		<tr>
+			<td style="text-align: center">1. 二战期间，日军就是打着裕仁天皇的名义侵略亚洲。</td>
+            <td style="text-align: left"><audio src="mysamples/short_audio/gt/005101.wav" controls="" preload=""></audio></td>
+            <!--<td style="text-align: left"><audio src="sample_5.wav" controls="" preload=""></audio></td>-->
+	        <td style="text-align: left"><audio src="mysamples/short_audio/fs2/005101.wav" controls="" preload=""></audio></td>
+            <td style="text-align: left"><audio src="mysamples/short_audio/proposed/005101.wav" controls="" preload=""></audio></td>
+        </tr>
+		<tr>
+			<td style="text-align: center">2. 德国历史悠久、文化璀璨，素有诗人和哲学家国度的美誉。</td>
+            <td style="text-align: left"><audio src="mysamples/short_audio/gt/009511.wav" controls="" preload=""></audio></td>
+	        <td style="text-align: left"><audio src="mysamples/short_audio/fs2/009511.wav" controls="" preload=""></audio></td>
+            <td style="text-align: left"><audio src="mysamples/short_audio/proposed/009511.wav" controls="" preload=""></audio></td>
+        </tr>
+		<tr>
+			<td style="text-align: center">3. 实施贷款损失准备动态监管。</td>
+            <td style="text-align: left"><audio src="mysamples/short_audio/gt/006179.wav" controls="" preload=""></audio></td>
+	        <td style="text-align: left"><audio src="mysamples/short_audio/fs2/006179.wav" controls="" preload=""></audio></td>
+            <td style="text-align: left"><audio src="mysamples/short_audio/proposed/006179.wav" controls="" preload=""></audio></td>
+        </tr>
+	</tbody>
+</table>
+<h2>3. Long-form Utterance<a name="long_form_utterance"></a></h2>
+<table>
+</table>
+
+<h2>4. Fine-grained semantic control<a name="fine-grained semantic control"></a></h2>
+  <br>
+  <hr>
+  <br>
+	    <footer class="site-footer">
+	        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com/">GitHub Pages</a>.</span>
+	    </footer>
+    </section>
+	</body>
+</html>
+
