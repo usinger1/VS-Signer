@@ -19,7 +19,7 @@
         <link rel="stylesheet" href="css/heading.css">
         <link rel="stylesheet" href="css/body.css">
         <script>
-          function createTable(dir, exp, audio, script, idx=1, row=3){
+          function createTable(dir, exp, audio, script, idx=1, row=3, x=1){
 
               html = "<table class=\"table table-responsive align-content-center\" style=\"background-color: white; border-radius: 20px\">"
               html +="<thead><tr><th colspan=\"5\" style=\"width: 40%\">"
@@ -28,9 +28,14 @@
               html += script["script"]
               html +="</i></div>"
               html +="<div class=\"text-left\">"
-              html += "\n(Pronunciation): <i>"
-              html += script["pronun"]
+//            html += "\n(Pronunciation): <i>"
+//            html += script["pronun"]
               html +="</i></div>"
+              if (x==1){
+			  	html += "<tr><th colspan=\"3\">"
+                html += "<img src=\"myfig/room/2093003476.png\" style=\"max-width: 50%; height: 25%; display: block; margin: auto; margin-bottom: 20px;\">"
+                html += "</th></tr>"
+			  }
               html += "</th></tr></thead>"
               html +="<tbody><tr>"
               for(var key in exp){
@@ -119,17 +124,16 @@
                     <div id="div1" class="col-lg-auto ml-auto">
                         <script>
                             dir = "audio/proposed_model"
-                            exp = {"Ground-Truth": "sample_gt",
-                                   "BigVGAN (Recon.)": "sampl_vocoded",
-                                   "MIDI-Voice": "sample_msp"}
+                            exp = {"Ground-Truth": "2093003476_gt",
+                                   "NSF-HiFiGAN (Recon.)": "2093003476_gt_voc",
+                                   "VS-Signer": "2093003476_mine"}
                             audios = {
-                                "샘플명": {"script": "이제 돌아갈 수 없는데",
-                                          "pronun": "ije doragal su eopsneunde "},
+                                "샘플명": {"script": "终于找到心有灵犀的美好"}
                             }
                             for(var audio in audios){
                                 div = document.getElementById("div1")
                                 script=audios[audio]
-                                html = createTable(dir, exp, audio, script, 0, row=4)
+                                html = createTable(dir, exp, audio, script, 0, row=4, x=1)
                                 div.insertAdjacentHTML("afterend", html);
                             }
 			
@@ -153,7 +157,7 @@
 	                    <table class="table table-responsive align-content-center" style="background-color: rgba(255, 255, 255, 0.993); border-radius: 20px">
 		            <thead><tr>
 		                        <th style="width:100%">MIDI-driven prior</th>
-		                        <img src="audio/mdp_gif/midi_to_voice.gif" style="max-width: 50%; height: 25%; display: block; margin: auto; margin-bottom: 20px;">
+		                        <img src="my" style="max-width: 50%; height: 25%; display: block; margin: auto; margin-bottom: 20px;">
 		            </tr></thead>
 		                      <tbody>
 		                        <tr>
@@ -188,7 +192,7 @@
 		                      <tbody>
 		                        <tr>
 					  <td rowspan="6" style="vertical-align: top;"><p> Step 0 </p>
-		                            <audio id="player" controls style="width: 240px"><source src="audio/msp_gif/0.wav " type="audio/wav"></audio>
+		                            <audio id="player" controls style="width: 240px"><source src="myaudio/MOS/gt_voc/2093003476.wav" type="audio/wav"></audio>
 		                          </td>
 		                          <td rowspan="6" style="vertical-align: top;"><p> Step 1 </p>
 		                            <audio id="player" controls style="width: 240px"><source src="audio/msp_gif/1.wav " type="audio/wav"></audio>
@@ -248,7 +252,7 @@
                           for(var audio in audios){
                               div = document.getElementById("div2")
                               script=audios[audio]
-                              html = createTable(dir, exp, audio, script, 2, row=4)
+                              html = createTable(dir, exp, audio, script, 2, row=4, x=-1)
                               // console.log(html)
                               div.insertAdjacentHTML("afterend", html);
                           }
