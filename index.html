@@ -155,10 +155,10 @@
 	              <div class="row">
 	                  <div class="col-lg-12 ml-auto">
 	                    <table class="table table-responsive align-content-center" style="background-color: rgba(255, 255, 255, 0.993); border-radius: 20px">
-		            <thead><tr>
-<!-- 		                        <th style="width:100%">MIDI-driven prior</th> -->
-		                        <img src="my" style="max-width: 50%; height: 25%; display: block; margin: auto; margin-bottom: 20px;">
-		            </tr></thead>
+<!--		            <thead><tr>-->
+<!--&lt;!&ndash; 		                        <th style="width:100%">MIDI-driven prior</th> &ndash;&gt;-->
+<!--		                        <img src="my" style="max-width: 50%; height: 25%; display: block; margin: auto; margin-bottom: 20px;">-->
+<!--		            </tr></thead>-->
 		                      <tbody>
 		                        <tr>
 					  <td rowspan="6" style="vertical-align: top;"><p> Step 1 </p>
@@ -225,48 +225,48 @@
 
 	    
         <!-- Models Comparison -->
-        <section class="page-section bg-info text-white mb-0" id="mc">
-            <div class="container">
-                <!-- About Section Heading-->
-                <div class="text-center">
-                    <h2 class="page-section-heading d-inline-block text-white">Singing Voice Synthesis Demo</h2>
-<!--                     <p class="pre-wrap lead">All speakers are seen during training</p> -->
-                </div>
-                <br>
-                <!-- Sample of Comparison Models-->
-                <div class="row">
-                  <div id="div2" class="col-lg-auto ml-auto">
-                      <script>
-                          dir = "myaudio/MOS"
-                          exp = {"GT": "gt",
-                                 "NSF-HiFIGAN(Recon.)": "gt_voc",
-                                 "DVM": "ds",
-                                 "VVM": "vi2",
-                                 "CVM": "como",
-                                 "VS-Singer": "mine",
-                              }
-                          audios = {
-                              "샘플명": {"script": "终于找到心有灵犀的美好",
-                                         },
-                          }
-                          for(var audio in audios){
-                              div = document.getElementById("div2")
-                              script=audios[audio]
-                              html = createTable(dir, exp, audio, script, 2, row=4, x=-1)
-                              // console.log(html)
-                              div.insertAdjacentHTML("afterend", html);
-                          }
-                      </script>
-                  </div>
-              </div>
-            </div>
-        </section>
+<!--        <section class="page-section bg-info text-white mb-0" id="mc">-->
+<!--            <div class="container">-->
+<!--                &lt;!&ndash; About Section Heading&ndash;&gt;-->
+<!--                <div class="text-center">-->
+<!--                    <h2 class="page-section-heading d-inline-block text-white">Singing Voice Synthesis Demo</h2>-->
+<!--&lt;!&ndash;                     <p class="pre-wrap lead">All speakers are seen during training</p> &ndash;&gt;-->
+<!--                </div>-->
+<!--                <br>-->
+<!--                &lt;!&ndash; Sample of Comparison Models&ndash;&gt;-->
+<!--                <div class="row">-->
+<!--                  <div id="div2" class="col-lg-auto ml-auto">-->
+<!--                      <script>-->
+<!--                          dir = "myaudio/MOS"-->
+<!--                          exp = {"GT": "gt",-->
+<!--                                 "NSF-HiFIGAN(Recon.)": "gt_voc",-->
+<!--                                 "DVM": "ds",-->
+<!--                                 "VVM": "vi2",-->
+<!--                                 "CVM": "como",-->
+<!--                                 "VS-Singer": "mine",-->
+<!--                              }-->
+<!--                          audios = {-->
+<!--                              "샘플명": {"script": "终于找到心有灵犀的美好",-->
+<!--                                         },-->
+<!--                          }-->
+<!--                          for(var audio in audios){-->
+<!--                              div = document.getElementById("div2")-->
+<!--                              script=audios[audio]-->
+<!--                              html = createTable(dir, exp, audio, script, 2, row=4, x=-1)-->
+<!--                              // console.log(html)-->
+<!--                              div.insertAdjacentHTML("afterend", html);-->
+<!--                          }-->
+<!--                      </script>-->
+<!--                  </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--        </section>-->
 
         <!-- Zero-shot Singing Voice Style Transfer -->
         <section class="page-section bg-info text-white mb-0" id="zeroshot">
           <div class="container">
             <div class="text-center">
-              <h2 class="page-section-heading d-inline-block">Ablation Study Demo</h2>
+              <h2 class="page-section-heading d-inline-block">Singing Voice Synthesis Demo</h2>
 <!--               <p class="pre-wrap lead">All speakers are unseen during training</p> -->
             </div>
 
@@ -287,25 +287,25 @@
                       </tr>
                       <!-- Sample of Zero-shot Style Transfer -->
                         <th colspan="5">
-                        	<img src="audio/mdp_gif/midi_to_voice.gif" style="max-width: 50%; height: 25%; display: block; margin: auto; margin-bottom: 20px;">
+                        	<img src="myfig/room/2093003476.png" style="max-width: 50%; height: 25%; display: block; margin: auto; margin-bottom: 20px;">
                         </th>
                       <tbody>
                         <tr>
-                          <td rowspan="6" style="vertical-align: top;"><p> GT </p>
+                          <td><p> GT </p>
                             <audio id="player" controls style="width: 240px"><source src="myaudio/MOS/gt/2093003476.wav " type="audio/wav"></audio>
                           </td>
-                          <td rowspan="6" style="vertical-align: top;"><p> NSF-HiFIGAN(Recon.) </p>
+                          <td><p> NSF-HiFIGAN(Recon.) </p>
                             <audio id="player" controls style="width: 240px"><source src="myaudio/MOS/gt_voc/2093003476.wav" type="audio/wav"></audio>
                           </td>
+                        </tr>
 
-                          <td><p>DVM<br><br></p>
+                        <tr>
+                          <td><p>DVM</p>
                             <audio id="player" controls style="width: 240px"><source src="myaudio/MOS/ds/2093003476.wav" type="audio/wav"></audio>
                           </td>
-                          <td><p>VVM<br><br></p>
+                          <td><p>VVM</p>
                             <audio id="player" controls style="width: 240px"><source src="myaudio/MOS/vi2/2093003476.wav" type="audio/wav"></audio>
                           </td>
-                        </tr>
-                        <tr>
                           <td><p>CVM</p>
                             <audio id="player" controls style="width: 240px"><source src="myaudio/MOS/como/2093003476.wav" type="audio/wav"></audio>
                           </td>  
@@ -317,23 +317,26 @@
                       <tr>
                         <th colspan="5">Script: 然后孤单被吞没了 </th>
                       </tr>
+                        <th colspan="5">
+                            <img src="myfig/room/2093003455.png" style="max-width: 50%; height: 25%; display: block; margin: auto; margin-bottom: 20px;">
+                        </th>
 		      <tbody>
                         <tr>
-                          <td rowspan="6" style="vertical-align: top;"><p> GT </p>
+                          <td><p> GT </p>
                             <audio id="player" controls style="width: 240px"><source src="myaudio/MOS/gt/2093003455.wav " type="audio/wav"></audio>
 			  </td>
-                          <td rowspan="6" style="vertical-align: top;"><p> NSF-HiFIGAN(Recon.) </p>
+                          <td><p> NSF-HiFIGAN(Recon.) </p>
                             <audio id="player" controls style="width: 240px"><source src="myaudio/MOS/gt_voc/2093003455.wav" type="audio/wav"></audio>
                           </td>
+                        </tr>
 
-                          <td><p>DVM<br><br></p>
+                        <tr>
+                        <td><p>DVM</p>
                             <audio id="player" controls style="width: 240px"><source src="myaudio/MOS/ds/2093003455.wav" type="audio/wav"></audio>
                           </td>
-                          <td><p>VVM<br><br></p>
+                          <td><p>VVM</p>
                             <audio id="player" controls style="width: 240px"><source src="myaudio/MOS/vi2/2093003455.wav" type="audio/wav"></audio>
                           </td>
-                        </tr>
-                        <tr>
                           <td><p>CVM</p>
                             <audio id="player" controls style="width: 240px"><source src="myaudio/MOS/como/2093003455.wav" type="audio/wav"></audio>
                           </td>  
@@ -345,23 +348,26 @@
                       <tr>
                         <th colspan="5">Script: 能不能给我一首歌的时间 </th>
                       </tr>
+                        <th colspan="5">
+                            <img src="myfig/room/2044001672.png" style="max-width: 50%; height: 25%; display: block; margin: auto; margin-bottom: 20px;">
+                        </th>
 		      <tbody>
                         <tr>
-                          <td rowspan="6" style="vertical-align: top;"><p> GT </p>
+                          <td><p> GT </p>
                             <audio id="player" controls style="width: 240px"><source src="myaudio/MOS/gt/2044001672.wav " type="audio/wav"></audio>
                           </td>
-                          <td rowspan="6" style="vertical-align: top;"><p> NSF-HiFIGAN(Recon.) </p>
+                          <td><p> NSF-HiFIGAN(Recon.) </p>
                             <audio id="player" controls style="width: 240px"><source src="myaudio/MOS/gt_voc/2044001672.wav" type="audio/wav"></audio>
                           </td>
+                        </tr>
 
-                          <td><p>DVM<br><br></p>
+                        <tr>
+                        <td><p>DVM</p>
                             <audio id="player" controls style="width: 240px"><source src="myaudio/MOS/ds/2044001672.wav" type="audio/wav"></audio>
                           </td>
-                          <td><p>VVM<br><br></p>
+                          <td><p>VVM</p>
                             <audio id="player" controls style="width: 240px"><source src="myaudio/MOS/vi2/2044001672.wav" type="audio/wav"></audio>
                           </td>
-                        </tr>
-                        <tr>
                           <td><p>CVM</p>
                             <audio id="player" controls style="width: 240px"><source src="myaudio/MOS/como/2044001672.wav" type="audio/wav"></audio>
                           </td>  
@@ -372,6 +378,125 @@
                       </tbody>
                     </table>
                   </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Zero-shot Singing Voice Style Transfer -->
+        <section class="page-section bg-info text-white mb-0" id="zeroshot">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="page-section-heading d-inline-block">Ablation Study Demo</h2>
+                    <!--               <p class="pre-wrap lead">All speakers are unseen during training</p> -->
+                </div>
+
+                <div class="divider-custom divider-light">
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 ml-auto">
+                        <table class="table table-responsive align-content-center" style="background-color: rgba(255, 255, 255, 0.993); border-radius: 20px">
+                            <!--<thead><tr>
+                              <th style="width:8%">Source Singing Voice</th>
+                              <th style="width:8%">Target Speaker</th>
+                              <th style="width: 23%"> Generated</th>
+                              <th style="width: 22%">         </th>
+                              <th style="width: 1%">         </th>
+                            </tr></thead>-->
+                            <tr>
+                                <th colspan="5">Script: 终于找到心有灵犀的美好 </th>
+                            </tr>
+                            <!-- Sample of Zero-shot Style Transfer -->
+                            <th colspan="5">
+                                <img src="myfig/room/2093003476.png" style="max-width: 50%; height: 25%; display: block; margin: auto; margin-bottom: 20px;">
+                            </th>
+                            <tbody>
+                            <tr>
+                                <td ><p> Full </p>
+                                    <audio id="player" controls style="width: 240px"><source src="myaudio/ablation/full/2093003476.wav " type="audio/wav"></audio>
+                                </td>
+                                <td ><p> W/o Modal Interaction </p>
+                                    <audio id="player" controls style="width: 240px"><source src="myaudio/ablation/vis/2093003476.wav" type="audio/wav"></audio>
+                                </td>
+
+                                <td><p>W/o Schrödinger Bridge</p>
+                                    <audio id="player" controls style="width: 240px"><source src="myaudio/ablation/sb/2093003476.wav" type="audio/wav"></audio>
+                                </td>
+                                <td><p>W/o SFE</p>
+                                    <audio id="player" controls style="width: 240px"><source src="myaudio/ablation/sfe/2093003476.wav" type="audio/wav"></audio>
+                                </td>
+                            </tr>
+<!--                            <tr>-->
+<!--                                <td><p>CVM</p>-->
+<!--                                    <audio id="player" controls style="width: 240px"><source src="myaudio/MOS/como/2093003476.wav" type="audio/wav"></audio>-->
+<!--                                </td>-->
+<!--                                <td><p>VS-Singer</p>-->
+<!--                                    <audio id="player" controls style="width: 240px"><source src="myaudio/MOS/mine/2093003476.wav" type="audio/wav"></audio>-->
+<!--                                </td><td></td>-->
+<!--                            </tr>-->
+                            </tbody>
+                            <tr>
+                                <th colspan="5">Script: 然后孤单被吞没了 </th>
+                            </tr>
+                            <th colspan="5">
+                                <img src="myfig/room/2093003455.png" style="max-width: 50%; height: 25%; display: block; margin: auto; margin-bottom: 20px;">
+                            </th>
+                            <tbody>
+                            <tr>
+                                <td ><p> Full </p>
+                                    <audio id="player" controls style="width: 240px"><source src="myaudio/ablation/full/2093003455.wav " type="audio/wav"></audio>
+                                </td>
+                                <td ><p> W/o Modal Interaction </p>
+                                    <audio id="player" controls style="width: 240px"><source src="myaudio/ablation/vis/2093003455.wav" type="audio/wav"></audio>
+                                </td>
+
+                                <td><p>W/o Schrödinger Bridge</p>
+                                    <audio id="player" controls style="width: 240px"><source src="myaudio/ablation/sb/2093003455.wav" type="audio/wav"></audio>
+                                </td>
+                                <td><p>W/o SFE</p>
+                                    <audio id="player" controls style="width: 240px"><source src="myaudio/ablation/sfe/2093003455.wav" type="audio/wav"></audio>
+                                </td>
+                            </tr>
+<!--                            <tr>-->
+<!--                                <td><p>CVM</p>-->
+<!--                                    <audio id="player" controls style="width: 240px"><source src="myaudio/MOS/como/2093003455.wav" type="audio/wav"></audio>-->
+<!--                                </td>-->
+<!--                                <td><p>VS-Singer</p>-->
+<!--                                    <audio id="player" controls style="width: 240px"><source src="myaudio/MOS/mine/2093003455.wav" type="audio/wav"></audio>-->
+<!--                                </td><td></td>-->
+<!--                            </tr>-->
+                            </tbody>
+                            <tr>
+                                <th colspan="5">Script: 能不能给我一首歌的时间 </th>
+                            </tr>
+                            <th colspan="5">
+                                <img src="myfig/room/2044001672.png" style="max-width: 50%; height: 25%; display: block; margin: auto; margin-bottom: 20px;">
+                            </th>
+                            <tbody>
+                            <tr>
+                                <td ><p> Full </p>
+                                    <audio id="player" controls style="width: 240px"><source src="myaudio/ablation/full/2044001672.wav " type="audio/wav"></audio>
+                                </td>
+                                <td ><p> W/o Modal Interaction </p>
+                                    <audio id="player" controls style="width: 240px"><source src="myaudio/ablation/vis/2044001672.wav" type="audio/wav"></audio>
+                                </td>
+                                <td><p>W/o Schrödinger Bridge</p>
+                                    <audio id="player" controls style="width: 240px"><source src="myaudio/ablation/sb/2044001672.wav" type="audio/wav"></audio>
+                                </td>
+                                <td><p>W/o SFE</p>
+                                    <audio id="player" controls style="width: 240px"><source src="myaudio/ablation/sfe/2044001672.wav" type="audio/wav"></audio>
+                                </td>
+                            </tr>
+<!--                            <tr>-->
+<!--                                <td><p>CVM</p>-->
+<!--                                    <audio id="player" controls style="width: 240px"><source src="myaudio/MOS/como/2044001672.wav" type="audio/wav"></audio>-->
+<!--                                </td>-->
+<!--                                <td><p>VS-Singer</p>-->
+<!--                                    <audio id="player" controls style="width: 240px"><source src="myaudio/MOS/mine/2044001672.wav" type="audio/wav"></audio>-->
+<!--                                </td><td></td>-->
+<!--                            </tr>-->
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </section>
